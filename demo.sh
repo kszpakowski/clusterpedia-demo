@@ -45,5 +45,5 @@ uv run generate-cluster-files.py
 kubectx kind-"${CLUSTER_NAME_PREFIX}-root"
 
 kubectl apply -f clusterpedia-storage/manifests.yaml
-kubectl apply -f clusterpedia/deploy
+kubectl apply -f clusterpedia/deploy # TODO clusterpedia/deploy/clusterpedia_apiserver_deployment.yaml requires patching - volumeMount tracing-config not found
 kubectl apply -f clusters
