@@ -47,3 +47,11 @@ kubectx kind-"${CLUSTER_NAME_PREFIX}-root"
 kubectl apply -f clusterpedia-storage/manifests.yaml
 kubectl apply -f clusterpedia/deploy # TODO clusterpedia/deploy/clusterpedia_apiserver_deployment.yaml requires patching - volumeMount tracing-config not found
 kubectl apply -f clusters
+
+
+
+# curl -sfL https://raw.githubusercontent.com/clusterpedia-io/clusterpedia/v0.7.0/hack/gen-clusterconfigs.sh | sh -
+# kubectl --cluster clusterpedia get xbuckets
+
+sleep 20
+kubectl get --raw="/apis/clusterpedia.io/v1beta1/resources/apis/storage.example.org/v1alpha1/xbuckets" | jq
