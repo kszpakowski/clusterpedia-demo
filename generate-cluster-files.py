@@ -1,7 +1,7 @@
 import yaml
 import os
 
-ip = "192.168.1.222"
+ip = "host.docker.internal"
 
 with open(os.environ["HOME"] + "/.kube/config", "r") as kubeconfig_file:
     kubeconfig = yaml.safe_load(kubeconfig_file)
