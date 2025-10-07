@@ -36,7 +36,14 @@ with open(os.environ["HOME"] + "/.kube/config", "r") as kubeconfig_file:
                 "caData": cluster.get("certificate-authority-data", ""),
                 "certData": user.get("client-certificate-data", ""),
                 "keyData": user.get("client-key-data", ""),
-                "syncResources": [{"group": "apps", "resources": ["deployments"]}],
+                "syncResources": [
+                    # {"group": "apps", "resources": ["deployments"]},
+                    {
+                        "group": "apiextensions.crossplane.io",
+                        "resources": ["compositions", "compositeresourcedefinitions"],
+                    },
+                    { "group": "storage.example.org", "resources": ["*"]},
+                ],
             },
         }
 

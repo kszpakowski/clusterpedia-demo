@@ -1,0 +1,7 @@
+apiVersion: storage.example.org/v1alpha1
+kind: XBucket
+metadata:
+  name: example-xbucket
+spec:
+  parameters:
+    location: us-east-1
